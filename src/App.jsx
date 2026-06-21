@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-
+const imageBase = `${import.meta.env.BASE_URL}images/`;
+const fallbackImage = "https://via.placeholder.com/400x500/f3e7df/7a5c4d?text=Ashify";
+  
 const productsData = [
   {
     id: 1,
@@ -8,7 +10,7 @@ const productsData = [
     meta: "Midi · Floral",
     price: 12367,
     oldPrice: 14999,
-    image: "/images/dress1.png",
+    image: `${imageBase}dress1.png`,
     tag: "new",
     cat: "women",
     rating: 4.6,
@@ -20,7 +22,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress2.png",
+    image:  `${imageBase}dress2.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -32,7 +34,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress3.png",
+    image: `${imageBase}dress3.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -44,7 +46,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress4.png",
+    image:  `${imageBase}dress4.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -56,7 +58,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress5.png",
+    image:`${imageBase}dress5.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -68,7 +70,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress6.png",
+    image:  `${imageBase}dress6.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -80,7 +82,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress7.png",
+    image: `${imageBase}dress7.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -92,7 +94,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress8.png",
+    image:`${imageBase}dress8.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -104,7 +106,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress9.png",
+    image: `${imageBase}dress9.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -116,7 +118,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress10.png",
+    image:  `${imageBase}dress10.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -128,7 +130,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress11.png",
+    image: `${imageBase}dress11.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -140,7 +142,7 @@ const productsData = [
     meta: "Party · Elegant",
     price: 15890,
     oldPrice: 18999,
-    image: "/images/dress12.png",
+    image: `${imageBase}dress12.png`,
     tag: "hot",
     cat: "women",
     rating: 4.8,
@@ -152,7 +154,7 @@ const productsData = [
     meta: "Formal Pink Shirt for Men",
     price: 8999,
     oldPrice: 10999,
-    image: "/images/men1.png",
+    image:  `${imageBase}men1.png`,
     tag: "sale",
     cat: "men",
     rating: 4.4,
@@ -164,7 +166,7 @@ const productsData = [
     meta: "Men’s Ethnic Kurta Collection",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men2.png",
+    image:`${imageBase}men2.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -176,7 +178,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men3.png",
+    image:`${imageBase}men3.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -188,7 +190,7 @@ const productsData = [
     meta: "Men’s Party Wear Shirt",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men4.png",
+    image:  `${imageBase}men4.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -200,7 +202,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men5.png",
+    image: `${imageBase}men5.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -212,7 +214,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men6.png",
+    image: `${imageBase}men6.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -224,7 +226,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men7.png",
+    image: `${imageBase}men7.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -236,7 +238,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men8.png",
+    image: `${imageBase}men8.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -248,7 +250,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men9.png",
+    image: `${imageBase}men9.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -260,7 +262,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men10.png",
+    image:`${imageBase}men10.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -272,7 +274,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men10.png",
+    image:`${imageBase}men11.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -284,7 +286,7 @@ const productsData = [
     meta: "Summer · Light",
     price: 2999,
     oldPrice: 3999,
-    image: "/images/men10.png",
+    image: `${imageBase}men12.png`,
     tag: "new",
     cat: "men",
     rating: 4.2,
@@ -296,7 +298,7 @@ const productsData = [
     meta: "Kids · Cute",
     price: 2499,
     oldPrice: 3299,
-    image: "/images/kid1.png",
+    image: `${imageBase}kid1.png`,
     tag: "new",
     cat: "kids",
     rating: 4.7,
@@ -308,7 +310,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid2.png",
+    image:`${imageBase}kid2.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -320,7 +322,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid3.png",
+    image: `${imageBase}kid3.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -332,7 +334,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid4.png",
+    image: `${imageBase}kid4.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -344,7 +346,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid5.png",
+    image: `${imageBase}kid5.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -356,7 +358,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid6.png",
+    image: `${imageBase}kid6.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -368,7 +370,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid7.png",
+    image: `${imageBase}kid7.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -380,7 +382,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid8.png",
+    image: `${imageBase}kid8.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -392,7 +394,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid9.png",
+    image: `${imageBase}kid9.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -404,7 +406,7 @@ const productsData = [
     meta: "Kids · Daily",
     price: 1999,
     oldPrice: 2599,
-    image: "/images/kid10.png",
+    image:`${imageBase}kid10.png`,
     tag: "sale",
     cat: "kids",
     rating: 4.3,
@@ -428,8 +430,8 @@ const getStoredArray = (key) => {
   }
 };
 
-const fallbackImage =
-  "https://via.placeholder.com/400x500/f3e7df/7a5c4d?text=Ashify";
+//const fallbackImage =
+  //"https://via.placeholder.com/400x500/f3e7df/7a5c4d?text=Ashify";//
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -642,7 +644,7 @@ export default function App() {
             onClick={() => handleCategoryClick("men")}
           >
             <img
-              src="/images/men.png"
+              src={`${imageBase}men.png`} 
               alt="Men"
               onError={(e) => {
                 e.currentTarget.src = fallbackImage;
@@ -657,7 +659,7 @@ export default function App() {
             onClick={() => handleCategoryClick("women")}
           >
             <img
-              src="/images/women.png"
+              src={`${imageBase}women.png`}
               alt="Women"
               onError={(e) => {
                 e.currentTarget.src = fallbackImage;
@@ -672,7 +674,7 @@ export default function App() {
             onClick={() => handleCategoryClick("kids")}
           >
             <img
-              src="/images/kid.png"
+              src={`${imageBase}kid.png`} 
               alt="Kids"
               onError={(e) => {
                 e.currentTarget.src = fallbackImage;
