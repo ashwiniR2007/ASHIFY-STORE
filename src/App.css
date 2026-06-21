@@ -71,11 +71,13 @@
 
 /* Hero */
 .hero {
-  min-height: 70vh;
+  
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-12) var(--space-8);
+  padding: var(--space-8) var(--space-4);
   background: linear-gradient(rgba(80, 32, 56, 0.85), rgba(80, 32, 56, 0.75)),
     url("/images/bg4.png") center/cover no-repeat;
 }

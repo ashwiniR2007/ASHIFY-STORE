@@ -622,6 +622,8 @@ const bg4 = `${import.meta.env.BASE_URL}images/bg4.png`;
   className="hero"
   id="home"
   style={{
+     minHeight: "100vh",
+    width: "100%",
     backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${bg4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
