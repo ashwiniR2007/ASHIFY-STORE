@@ -567,6 +567,7 @@ export default function App() {
     alert("Message sent successfully!");
     event.currentTarget.reset();
   };
+const bg4 = `${import.meta.env.BASE_URL}images/bg4.png`;
 
   return (
     <div className="app">
@@ -617,19 +618,28 @@ export default function App() {
         </div>
       </header>
 
-      <section className="hero" id="home">
-        <div className="hero-content">
-          <p className="hero-badge">New Season Collection</p>
-          <h1>Style that feels premium, modern, and effortless.</h1>
-          <p>
-            Discover elegant fashion for women, men, and kids with trending
-            styles, best deals, and everyday essentials.
-          </p>
-          <a href="#products" className="hero-btn">
-            Shop Now
-          </a>
-        </div>
-      </section>
+      <section
+  className="hero"
+  id="home"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${bg4})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="hero-content">
+    <p className="hero-badge">New Season Collection</p>
+    <h1>Style that feels premium, modern, and effortless.</h1>
+    <p>
+      Discover elegant fashion for women, men, and kids with trending
+      styles, best deals, and everyday essentials.
+    </p>
+    <a href="#products" className="hero-btn">
+      Shop Now
+    </a>
+  </div>
+</section>
 
       <section className="categories" id="categories">
         <div className="section-head">
